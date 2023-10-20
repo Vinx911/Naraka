@@ -1,0 +1,18 @@
+[versions]
+agp = "8.1.2"
+kotlin = "1.9.10"
+
+min_sdk_version = "21"
+target_sdk_version = "34"
+compile_sdk_version = "34"
+
+[libraries]
+corektx = "androidx.core:core-ktx:1.12.0"
+appcompat = "androidx.appcompat:appcompat:1.6.1"
+material = "com.google.android.material:material:1.10.0"
+lifecycle-runtimektx = "androidx.lifecycle:lifecycle-runtime-ktx:2.6.2"
+junit = "junit:junit:4.13.2"
+test-ext = "androidx.test.ext:junit-ktx:1.2.0-alpha01"
+test-espresso-core = "androidx.test.espresso:espresso-core:3.6.0-alpha01"
+
+[bundles]

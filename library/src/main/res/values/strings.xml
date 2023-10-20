@@ -1,0 +1,8 @@
+<resources>
+    <string name="naraka_error_occurred_explanation">发生意外错误。\n对不起，给您带来了不便。</string>
+    <string name="naraka_restart_app">重启App</string>
+    <string name="naraka_error_details">详细错误信息</string>
+    <string name="naraka_close">关闭</string>
+    <string name="naraka_copy_to_clipboard">复制到剪贴板</string>
+    <string name="naraka_error_details2">错误信息</string>
+</resources>
