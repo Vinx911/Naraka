@@ -31,6 +31,7 @@ class Naraka private constructor(
 
         private const val NARAKA_PACKAGE_NAME = "com.vinx911.compose.naraka"
         private const val DEFAULT_HANDLER_PACKAGE_NAME = "com.android.internal.os"
+        private const val EXTRA_CRASH_MSG = "CrashMsg"
         private const val EXTRA_CRASH_DATA = "CrashData"
 
         /**
@@ -93,10 +94,17 @@ class Naraka private constructor(
         }
 
         /**
-         * 从intent中获取Throwable
+         * 从intent中获取StackTrace
          */
         fun getStackTraceFromIntent(intent: Intent): String {
             return intent.getStringExtra(EXTRA_CRASH_DATA) ?: ""
+        }
+
+        /**
+         * 从intent中获取异常消息
+         */
+        fun getCrashMsgFromIntent(intent: Intent): String {
+            return intent.getStringExtra(EXTRA_CRASH_MSG) ?: ""
         }
 
         private fun getBuildDateAsString(context: Context, dateFormat: DateFormat): String? {
@@ -183,10 +191,12 @@ class Naraka private constructor(
             val pw = PrintWriter(sw)
             throwable.printStackTrace(pw)
             val stackTraceString = sw.toString()
+            val crashMsg = throwable.message
 
             val application = context.applicationContext as Application
             val errorActivity = getErrorActivity()
             val intent = Intent(application, errorActivity).apply {
+                putExtra(EXTRA_CRASH_MSG, crashMsg)
                 putExtra(EXTRA_CRASH_DATA, stackTraceString)
                 addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
                 addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)

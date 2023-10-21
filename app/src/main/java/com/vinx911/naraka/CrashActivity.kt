@@ -16,8 +16,8 @@ class CrashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCrashBinding.inflate(layoutInflater)
-        Naraka.getThrowableFromIntent(intent).let {
-            Log.e(TAG, "Error Data: ", it)
+        Naraka.getCrashMsgFromIntent(intent).let {
+            Log.e(TAG, "Error Data: $it")
         }
         setOnClickListeners()
         setContentView(binding.root)
