@@ -26,11 +26,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        jvmTarget = JavaVersion.VERSION_11.toString()
     }
 
     publishing {
@@ -48,4 +48,17 @@ dependencies {
     implementation(androidx.appcompat)
 }
 
-apply(from = "./publish.gradle.kts")
+configure<PublishingExtension> {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "com.github.vinx911"
+            artifactId = "Naraka"
+            version = "1.0.0"
+            description = "每一个App死掉(崩溃)后，都应该进入地狱(Naraka)."
+
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
+    }
+}

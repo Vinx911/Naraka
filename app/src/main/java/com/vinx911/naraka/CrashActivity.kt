@@ -27,9 +27,9 @@ class CrashActivity : AppCompatActivity() {
         binding.bReport.setOnClickListener {
             lifecycleScope.launch {
                 binding.bReport.isEnabled = false
-                binding.bReport.text = "Reporting..."
+                binding.bReport.text = "上报异常..."
                 delay(2000)
-                binding.bReport.text = "Reported."
+                binding.bReport.text = "上报成功."
                 delay(1000)
 //                finishAffinity()
             }

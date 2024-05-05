@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Throw an Error"
+        android:text="抛出一个错误"
         app:backgroundTint="#FF1744" />
 
 </LinearLayout>

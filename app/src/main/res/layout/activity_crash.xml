@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Unexpected Error Occurred"
+        android:text="发生意外错误"
         android:textColor="#000"
         android:textSize="22sp" />
 
@@ -33,7 +33,7 @@
         android:alpha=".7"
         android:gravity="center"
         android:maxEms="11"
-        android:text="Sorry for inconvenience. Please report this error to us"
+        android:text="对造成的不便表示歉意\n请向我们报告此错误"
         android:textColor="#000"
         android:textSize="16sp" />
 
@@ -44,7 +44,7 @@
         android:layout_marginTop="30dp"
         android:minHeight="50dp"
         android:paddingHorizontal="24dp"
-        android:text="Report"
+        android:text="上报"
         android:textAllCaps="false"
         android:textSize="22sp" />
 
@@ -58,7 +58,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Restart App"
+            android:text="重启 App"
             android:textColor="#000"
             android:textSize="16sp" />
 

@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setOnClickListeners() {
         binding.bThrowError.setOnClickListener {
-            throw Error("Hello, I'm the crash!")
+            throw Error("呀，我要死了！！！!")
         }
     }
 
